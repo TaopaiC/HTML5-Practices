@@ -1,8 +1,83 @@
 !!!
 %html
   %head
-    %title little
-    %style(type="text/stylesheet"){:src => "/assets/application.css"}
+    %title Device Motion
+    %link(href="/assets/application.css" rel="stylesheet" type="text/css" media="screen")
   %body
-    %script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js")
+    #acce_panel.panel
+      %h1 Device Motion
+      .no
+        %p Don't support acce
+      .yes
+        .function_panel
+          %h2 Update interval
+          %p#acce_update_interval
+        .function_panel
+          %h2 Acceleration Including Gravity
+          %p
+            %label x
+            %span#acce_acceleration_including_gravity_x
+          %p
+            %label y
+            %span#acce_acceleration_including_gravity_y
+          %p
+            %label z
+            %span#acce_acceleration_including_gravity_z
+        .function_panel
+          %h2 Acceleration
+          %p
+            %label x
+            %span#acce_acceleration_x
+          %p
+            %label y
+            %span#acce_acceleration_y
+          %p
+            %label z
+            %span#acce_acceleration_z
+        .function_panel
+          %h2 Rotation rate
+          %p
+            %label alpha
+            %span#acce_rotation_alpha
+          %p
+            %label beta
+            %span#acce_rotation_beta
+          %p
+            %label gamma
+            %span#acce_rotation_gamma
+    #orientation_panel.panel
+      %h1 Device Orientation
+      .no
+        %p Don't support Orientation
+      .yes
+        .function_panel
+          %h2 DeviceOrientation
+          %p
+            %label alpha
+            %span#device_orientation_alpha
+          %p
+            %label beta
+            %span#device_orientation_beta
+          %p
+            %label gamma
+            %span#device_orientation_gamma
+          %p
+            %label absolute
+            %span#device_orientation_absolute
+    #moz_orientation_panel.panel
+      %h1 Moz Device Orientation
+      .no
+        %p Don't support MozOrientation
+      .yes
+        .function_panel
+          %h2 MozDeviceOrientation
+          %p
+            %label x
+            %span#moz_orientation_x
+          %p
+            %label y
+            %span#moz_orientation_y
+          %p
+            %label z
+            %span#moz_orientation_z
     %script(type="text/javascript" src="/assets/application.js")
