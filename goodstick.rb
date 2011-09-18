@@ -31,3 +31,7 @@ end
 get '/' do
   haml :index
 end
+
+get '/:name.html' do
+  haml params[:name].to_sym
+end
