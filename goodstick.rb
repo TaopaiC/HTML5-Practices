@@ -1,6 +1,10 @@
 require 'bundler/setup'
 Bundler.require
 
+configure do
+  set :haml, { :format => :html5 }
+end
+
 assets = Sprockets::Environment.new('.') do |env|
   env.logger = Logger.new(STDOUT)
 end
