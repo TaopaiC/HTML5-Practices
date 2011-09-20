@@ -11,15 +11,18 @@ updateDomIdText = (domid, text) ->
 
 updateDeviceMotion = (evt) ->
   updateDomIdText("acce_update_interval", "#{evt.interval}")
-  updateDomIdText("acce_acceleration_including_gravity_x", "#{format evt.accelerationIncludingGravity.x}")
-  updateDomIdText("acce_acceleration_including_gravity_y", "#{format evt.accelerationIncludingGravity.y}")
-  updateDomIdText("acce_acceleration_including_gravity_z", "#{format evt.accelerationIncludingGravity.z}")
-  updateDomIdText("acce_acceleration_x", "#{format evt.acceleration.x}")
-  updateDomIdText("acce_acceleration_y", "#{format evt.acceleration.y}")
-  updateDomIdText("acce_acceleration_z", "#{format evt.acceleration.z}")
-  updateDomIdText("acce_rotation_alpha", "#{format evt.rotationRate.alpha}")
-  updateDomIdText("acce_rotation_beta",  "#{format evt.rotationRate.beta}")
-  updateDomIdText("acce_rotation_gamma", "#{format evt.rotationRate.gamma}")
+  if evt.accelerationIncludingGravity
+    updateDomIdText("acce_acceleration_including_gravity_x", "#{format evt.accelerationIncludingGravity.x}")
+    updateDomIdText("acce_acceleration_including_gravity_y", "#{format evt.accelerationIncludingGravity.y}")
+    updateDomIdText("acce_acceleration_including_gravity_z", "#{format evt.accelerationIncludingGravity.z}")
+  if evt.acceleration
+    updateDomIdText("acce_acceleration_x", "#{format evt.acceleration.x}")
+    updateDomIdText("acce_acceleration_y", "#{format evt.acceleration.y}")
+    updateDomIdText("acce_acceleration_z", "#{format evt.acceleration.z}")
+  if evt.rotationRate
+    updateDomIdText("acce_rotation_alpha", "#{format evt.rotationRate.alpha}")
+    updateDomIdText("acce_rotation_beta",  "#{format evt.rotationRate.beta}")
+    updateDomIdText("acce_rotation_gamma", "#{format evt.rotationRate.gamma}")
 
 updateDeviceOrientation = (evt) ->
   updateDomIdText("device_orientation_alpha",   "#{format evt.alpha}")
