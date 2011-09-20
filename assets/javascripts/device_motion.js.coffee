@@ -10,6 +10,7 @@ updateDomIdText = (domid, text) ->
   document.getElementById(domid).innerHTML = text
 
 updateDeviceMotion = (evt) ->
+  updateDomIdText("acce_update_time", "#{(new Date()).getTime()}")
   updateDomIdText("acce_update_interval", "#{evt.interval}")
   if evt.accelerationIncludingGravity
     updateDomIdText("acce_acceleration_including_gravity_x", "#{format evt.accelerationIncludingGravity.x}")
@@ -25,6 +26,7 @@ updateDeviceMotion = (evt) ->
     updateDomIdText("acce_rotation_gamma", "#{format evt.rotationRate.gamma}")
 
 updateDeviceOrientation = (evt) ->
+  updateDomIdText("device_orientation_update_time", "#{(new Date()).getTime()}")
   updateDomIdText("device_orientation_alpha",   "#{format evt.alpha}")
   updateDomIdText("device_orientation_beta",    "#{format evt.beta}")
   updateDomIdText("device_orientation_gamma",   "#{format evt.gamma}")
@@ -32,9 +34,10 @@ updateDeviceOrientation = (evt) ->
   updateDomIdText("window_orientation","#{window.orientation}")
 
 updateMozOrientation = (evt) ->
-  updateDomIdText("#moz_orientation_x", "#{format evt.x}")
-  updateDomIdText("#moz_orientation_y", "#{format evt.y}")
-  updateDomIdText("#moz_orientation_z", "#{format evt.z}")
+  updateDomIdText("moz_orientation_update_time", "#{(new Date()).getTime()}")
+  updateDomIdText("moz_orientation_x", "#{format evt.x}")
+  updateDomIdText("moz_orientation_y", "#{format evt.y}")
+  updateDomIdText("moz_orientation_z", "#{format evt.z}")
 
 init = ->
   if (window.DeviceMotionEvent != undefined)
