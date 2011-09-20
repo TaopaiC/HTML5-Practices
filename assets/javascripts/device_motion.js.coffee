@@ -26,6 +26,7 @@ updateDeviceOrientation = (evt) ->
   updateDomIdText("device_orientation_beta",    "#{format evt.beta}")
   updateDomIdText("device_orientation_gamma",   "#{format evt.gamma}")
   updateDomIdText("device_orientation_absolute","#{evt.absolute}")
+  updateDomIdText("window_orientation","#{window.orientation}")
 
 updateMozOrientation = (evt) ->
   updateDomIdText("#moz_orientation_x", "#{format evt.x}")
