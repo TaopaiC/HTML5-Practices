@@ -1,8 +1,10 @@
 .panel {
+  width: 400px;
   border-left: solid 1px;
   border-bottom: solid 1px;
   padding: 0px 10px;
   margin-bottom: 5px;
+  margin-left: 100px;
 
   .yes {
     display: none;
@@ -12,4 +14,33 @@
 .function_panel {
   border-top: solid 1px;
   margin-left: 10px;
+
+  > div {
+    margin-bottom: 10px;
+  }
 }
+
+.counter {
+  border: 1px black solid;
+  width: 200px;
+  height: 6px;
+  margin-left: 100px;
+
+  > div {
+    background-color: red;
+    height: 4px;
+    width: 0px;
+    margin-top: 1px;
+
+    &.pos {
+      background-color: red;
+      margin-left: 100px;
+    }
+    &.neg {
+      background-color: green;
+      float: right;
+      margin-right: 100px;
+    }
+  }
+}
+
