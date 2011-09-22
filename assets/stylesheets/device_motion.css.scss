@@ -2,11 +2,32 @@
   width: 400px;
   border-left: solid 1px;
   border-bottom: solid 1px;
-  padding: 0px 10px;
+  padding: 0px 2px 0px 10px;
   margin-bottom: 5px;
   margin-left: 100px;
 
+  h1 {
+    background-color: #CCC;
+    padding-left: 15px;
+  }
+
   .yes {
+    display: none;
+  }
+}
+
+.panel.support {
+  border-width: 5px;
+
+  h1 {
+    background-color: green;
+    color: white;
+  }
+  .yes {
+    display: block;
+  }
+
+  .no {
     display: none;
   }
 }
@@ -14,6 +35,11 @@
 .function_panel {
   border-top: solid 1px;
   margin-left: 10px;
+
+  h2 {
+    background-color: #CCC;
+    padding-left: 15px;
+  }
 
   > div {
     margin-bottom: 10px;

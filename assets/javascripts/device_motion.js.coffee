@@ -3,8 +3,7 @@ format = (value) ->
 
 showPanel = (panelid) ->
   panel = document.getElementById(panelid)
-  panel.getElementsByClassName("no" )[0].style.display = "none"
-  panel.getElementsByClassName("yes")[0].style.display = "block"
+  panel.className += " support"
 
 updateDomIdText = (domid, text) ->
   document.getElementById(domid).innerHTML = text
