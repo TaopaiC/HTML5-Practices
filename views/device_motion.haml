@@ -7,15 +7,20 @@
   %body
     #acce_panel.panel
       %h1 Device Motion
+      .object
+        .function_panel
+          %div
+            %label window.DeviceMotionEvent
+            %span#acce_event_object no
       .no
-        %p Don't support acce
+        %p Don't support devicemotion event
       .yes
         %p
           %label last update time
           %span#acce_update_time -
-        .function_panel
-          %h2 Update interval
-          %p#acce_update_interval -
+        %p
+          %label Update interval
+          %span#acce_update_interval -
         .function_panel
           %h2 Acceleration Including Gravity
           %div
@@ -69,8 +74,13 @@
               #acce_rotation_gamma_counter
     #orientation_panel.panel
       %h1 Device Orientation
+      .object
+        .function_panel
+          %div
+            %label window.DeviceOrientationEvent
+            %span#device_orientation_event_object no
       .no
-        %p Don't support Orientation
+        %p Don't support devicerientation event
       .yes
         %p
           %label last update time
@@ -99,9 +109,27 @@
           %h2 window.Orientation
           %p
             %label window.orientation
+            %span#window_orientation_by_deviceorientation -
+    #window_orientation_panel.panel
+      %h1 On Orientation Change
+      .no
+        %p Don't support window.onorientationchange.
+      .yes
+        %p
+          %label last update time
+          %span#window_orientation_update_time -
+        .function_panel
+          %h2 window.Orientation
+          %p
+            %label window.orientation
             %span#window_orientation -
     #moz_orientation_panel.panel
       %h1 Moz Device Orientation
+      .object
+        .function_panel
+          %div
+            %label window.MozOrientationEvent
+            %span#moz_orientation_event_object no
       .no
         %p Don't support MozOrientation
       .yes
@@ -110,13 +138,19 @@
           %span#moz_orientation_update_time -
         .function_panel
           %h2 MozDeviceOrientation
-          %p
+          %div
             %label x
             %span#moz_orientation_x -
-          %p
+            .counter
+              #moz_orientation_x_counter
+          %div
             %label y
             %span#moz_orientation_y -
-          %p
+            .counter
+              #moz_orientation_y_counter
+          %div
             %label z
             %span#moz_orientation_z -
+            .counter
+              #moz_orientation_z_counter
     %script(type="text/javascript" src="/assets/device_motion.js")
